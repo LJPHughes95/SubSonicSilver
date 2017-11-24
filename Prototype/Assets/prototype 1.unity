@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 25938316}
   - component: {fileID: 25938315}
   - component: {fileID: 25938319}
+  - component: {fileID: 25938314}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -171,6 +172,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &25938314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 25938312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71c074f6b413b34bbc794f9a0b91c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  emitter: {fileID: 19602366}
+  bullet: {fileID: 54571702411114368, guid: 9ccc50b55db9b0942ad5a8bedf3ba701, type: 2}
+  bShootCooldown: 0.2
+  shootCooldown: 0
+  direction: 0
 --- !u!54 &25938315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5008,6 +5026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quality: 0
+  mixer: {fileID: 0}
   music: {fileID: 1459160687}
   musicVol: {fileID: 1420443827}
   SFX: []
