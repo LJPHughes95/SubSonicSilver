@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f8495e96b4446014db1863dccb34129c
+timeCreated: 1509701420
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adventure Hollow
+  fontNames:
+  - Adventure Hollow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
