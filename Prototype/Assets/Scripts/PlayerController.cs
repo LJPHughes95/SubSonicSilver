@@ -58,6 +58,15 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         myRB.velocity = movement * speed;
+
+		if (transform.position.y >= 18) {
+			transform.position = new Vector3 (transform.position.x, 18, transform.position.z);
+		}
+		if (transform.position.y <= -10)
+		{
+			transform.position = new Vector3 (transform.position.x, -10, transform.position.z);
+		}
+
     }
 
 	void OnCollisionEnter (Collision collision)

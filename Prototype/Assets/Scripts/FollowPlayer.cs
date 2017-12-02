@@ -17,6 +17,8 @@ public class FollowPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		Vector3 targetCamPos = target.position + offset;
+		targetCamPos.y = transform.position.y;
+		targetCamPos.z = transform.position.z;
 
 		transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
 	}

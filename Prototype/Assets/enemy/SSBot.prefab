@@ -155,5 +155,5 @@ MonoBehaviour:
   speed: 0
   emitter: {fileID: 4262723631038012}
   bullet: {fileID: 54419777953782434, guid: e6349b4e2fd239748b2b04b8fe43effa, type: 2}
-  minShootTime: 10
-  maxShootTIme: 30
+  minShootTime: 2
+  maxShootTIme: 4
