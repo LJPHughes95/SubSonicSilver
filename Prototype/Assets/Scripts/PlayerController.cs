@@ -18,8 +18,18 @@ public class PlayerController : MonoBehaviour {
 
     public int direction;
 
+    public GameObject heart1, heart2, heart3;
+    public static int health;
+
+    public PauseScript UIScript;
+
     void Start()
 	{
+        PauseScript UIScript = GetComponent<PauseScript>();
+        health = 3;
+        heart1.gameObject.SetActive(true);
+        heart2.gameObject.SetActive(true);
+        heart3.gameObject.SetActive(true);
         playerInstance = this;
         direction = 1;
 		myRB = GetComponent<Rigidbody>();
@@ -27,6 +37,11 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+        if(health > 3)
+        {
+            health = 3;
+        }
+
         if(shootCooldown > 0)
         {
             shootCooldown -= Time.deltaTime;
@@ -37,6 +52,15 @@ public class PlayerController : MonoBehaviour {
             Instantiate(bullet, emitter.position, Quaternion.identity);
             shootCooldown = bShootCooldown;
         }
+
+        //Debug Testing
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            TakeDamage(1);
+            Debug.Log(health);
+        }
+
+        SetHealth();
     }
 
     // Update is called once per frame
@@ -64,9 +88,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "enemy")
 		{
-			Destroy (collision.gameObject);
-			Destroy (gameObject);
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+
+            TakeDamage(1);
 		}
 	}
 
@@ -74,4 +97,39 @@ public class PlayerController : MonoBehaviour {
     {
         return direction;
     }
+
+    public void SetHealth()
+    {
+        switch(health)
+        {
+            case 3:
+                heart1.SetActive(true);
+                heart2.SetActive(true);
+                heart3.SetActive(true);
+                break;
+            case 2:
+                heart1.SetActive(true);
+                heart2.SetActive(true);
+                heart3.SetActive(false);
+                break;
+            case 1:
+                heart1.SetActive(true);
+                heart2.SetActive(false);
+                heart3.SetActive(false);
+                break;
+            case 0:
+                heart1.SetActive(false);
+                heart2.SetActive(false);
+                heart3.SetActive(false);
+                Debug.Log("player death");
+                UIScript.GameOver();
+                break;
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+    }
+
 }
