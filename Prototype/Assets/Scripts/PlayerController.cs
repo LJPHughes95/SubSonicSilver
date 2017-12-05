@@ -47,22 +47,22 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 0, 0);
+            myRB.rotation = Quaternion.Euler(0, 90, 0);
             direction = 1;
         }
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 180, 0);
+            myRB.rotation = Quaternion.Euler(0, 270, 0);
             direction = -1;
         }
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         myRB.velocity = movement * speed;
 
-		if (transform.position.y >= 18) {
-			transform.position = new Vector3 (transform.position.x, 18, transform.position.z);
+		if (transform.position.y >= 15) {
+			transform.position = new Vector3 (transform.position.x, 15, transform.position.z);
 		}
-		if (transform.position.y <= -10)
+		if (transform.position.y <= -15)
 		{
 			transform.position = new Vector3 (transform.position.x, -10, transform.position.z);
 		}

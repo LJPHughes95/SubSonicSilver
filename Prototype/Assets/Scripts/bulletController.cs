@@ -26,9 +26,5 @@ public class bulletController : MonoBehaviour {
 			Destroy (collision.gameObject);
 			Destroy (gameObject);
 		}
-		else if (collision.gameObject.tag == "shield")
-		{
-			Destroy (gameObject);
-		}
 	}
 }

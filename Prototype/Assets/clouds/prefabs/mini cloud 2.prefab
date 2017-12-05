@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212706503885909584}
   - component: {fileID: 54713011365706194}
   - component: {fileID: 114556893971604374}
+  - component: {fileID: 65343398428037356}
   m_Layer: 0
   m_Name: mini cloud 2
   m_TagString: Untagged
@@ -57,6 +58,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65343398428037356
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607181337842658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114556893971604374
 MonoBehaviour:
   m_ObjectHideFlags: 1
