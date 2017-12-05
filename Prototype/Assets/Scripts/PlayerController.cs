@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
     public int direction;
 
+	int i;
+
     void Start()
 	{
         playerInstance = this;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour {
             Instantiate(bullet, emitter.position, Quaternion.identity);
             shootCooldown = bShootCooldown;
         }
+
     }
 
     // Update is called once per frame
@@ -74,8 +77,8 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "enemy")
 		{
 			Destroy (collision.gameObject);
-			Destroy (gameObject);
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+			GetComponent<MeshCollider> ().enabled = false;
+			Invoke ("hit", 0.1f);
 		}
 	}
 
@@ -83,4 +86,23 @@ public class PlayerController : MonoBehaviour {
     {
         return direction;
     }
+		
+	public void hit()
+	{
+		GetComponent<MeshRenderer> ().enabled = false;
+		Invoke ("reset", 0.2f);
+	}
+
+	public void reset()
+	{
+		if (i < 2) {
+			GetComponent<MeshRenderer> ().enabled = true;
+			i += 1;
+			Invoke ("hit", 0.2f);
+		} else {
+			GetComponent<MeshRenderer> ().enabled = true;
+			i = 0;
+			GetComponent<MeshCollider> ().enabled = true;
+		}
+	}
 }
