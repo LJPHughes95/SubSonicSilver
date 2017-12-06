@@ -1,178 +1,149 @@
-Mono path[0] = 'E:/Prototype_W_UI (2)/Prototype_W_UI/Test_Data/Managed'
-Mono path[1] = 'E:/Prototype_W_UI (2)/Prototype_W_UI/Test_Data/Mono'
-Mono config path = 'E:/Prototype_W_UI (2)/Prototype_W_UI/Test_Data/Mono/etc'
-PlayerConnection initialized from E:/Prototype_W_UI (2)/Prototype_W_UI/Test_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55147
-Multi-casting "[IP] 10.4.76.134 [Port] 55147 [Flags] 2 [Guid] 3689693145 [EditorId] 2717436963 [Version] 1048832 [Id] WindowsPlayer(SJ304-05) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55147]
-PlayerConnection already initialized - listening to [0.0.0.0:55147]
-Player data archive not found at `E:/Prototype_W_UI (2)/Prototype_W_UI/Test_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.1f1 (2860b30f0b54)
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M (ID=0x1392)
     Vendor:   NVIDIA
-    VRAM:     3072 MB
-    Driver:   22.21.13.8528
+    VRAM:     2019 MB
+    Driver:   23.21.13.8800
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     2019 MB
+    Driver:   23.21.13.8800
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.039 seconds
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\Prototype_W_UI (2)\Prototype_W_UI\Test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.161 seconds
+- Completed reload, in  0.084 seconds
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1200 59Hz; virtual: 3200x1200 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 1.038630 ms
-playtime
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-PauseScript:SetUpStates() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:64)
-PauseScript:Start() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:28)
+<RI> Initialized touch support.
+UnloadTime: 1.395447 ms
+UnloadTime: 3.699435 ms
+IOException: Sharing violation on path C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\StreamingAssets\Options.json
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamWriter..ctor (System.String path, Boolean append, System.Text.Encoding encoding, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamWriter..ctor (System.String path, Boolean append, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.WriteAllText (System.String path, System.String contents) [0x00000] in <filename unknown>:0 
+  at OptionsMenu.SaveSettings () [0x00000] in <filename unknown>:0 
+  at OptionsMenu.<SetResolution>m__1 (Int32 ) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCall`1[System.Int32].Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEvent`1[System.Int32].Invoke (Int32 arg0) [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Dropdown.set_value (Int32 value) [0x00000] in <filename unknown>:0 
+  at OptionsMenu.LoadSettings () [0x00000] in <filename unknown>:0 
+  at OptionsMenu.Start () [0x00000] in <filename unknown>:0 
  
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/PauseScript.cs Line: 64)
+(Filename:  Line: -1)
+
+playtime
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+playtime
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+IOException: Sharing violation on path C:\Users\alex\Documents\GitHub\SubSonicSilver\Prototype\Test_Data\StreamingAssets\Options.json
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamWriter..ctor (System.String path, Boolean append, System.Text.Encoding encoding, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamWriter..ctor (System.String path, Boolean append, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.WriteAllText (System.String path, System.String contents) [0x00000] in <filename unknown>:0 
+  at OptionsMenu.SaveSettings () [0x00000] in <filename unknown>:0 
+  at OptionsMenu.ChangeAudioVol (UnityEngine.AudioSource source) [0x00000] in <filename unknown>:0 
+  at OptionsMenu.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.696077 ms
-System memory in use before: 56.2 MB.
-System memory in use after: 56.0 MB.
+UnloadTime: 2.225983 ms
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 664.
-Total: 0.409407 ms (FindLiveObjects: 0.024803 ms CreateObjectMapping: 0.023093 ms MarkObjects: 0.267426 ms  DeleteObjects: 0.093513 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 670.
+Total: 0.549311 ms (FindLiveObjects: 0.048444 ms CreateObjectMapping: 0.030380 ms MarkObjects: 0.425326 ms  DeleteObjects: 0.043928 ms)
 
 playtime
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-PauseScript:SetUpStates() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:64)
-PauseScript:Start() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:28)
  
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/PauseScript.cs Line: 64)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2208 -> priority: 1 
-  Thread -> id: 1e5c -> priority: 1 
-  Thread -> id: 1a28 -> priority: 1 
-  Thread -> id: e4 -> priority: 1 
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\runtime\TransformBindings.gen.cs:27 
-  at FollowPlayer.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\FollowPlayer.cs:19 
+  Thread -> id: 2568 -> priority: 1 
+  Thread -> id: 40d0 -> priority: 1 
+  Thread -> id: 3790 -> priority: 1 
+  Thread -> id: 1ba0 -> priority: 1 
+pauseMenu
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/TransformBindings.gen.cs Line: 27)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Rigidbody:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Rigidbody.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\modules\Physics\DynamicsBindings.gen.cs:1580 
-  at RepeatingBackground.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\RepeatingBackground.cs:16 
+optionsMenu
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/Physics/DynamicsBindings.gen.cs Line: 1580)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Rigidbody:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Rigidbody.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\modules\Physics\DynamicsBindings.gen.cs:1580 
-  at RepeatingBackground.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\RepeatingBackground.cs:16 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/Physics/DynamicsBindings.gen.cs Line: 1580)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\runtime\TransformBindings.gen.cs:27 
-  at FollowPlayer.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\FollowPlayer.cs:19 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/TransformBindings.gen.cs Line: 27)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Rigidbody:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Rigidbody.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\modules\Physics\DynamicsBindings.gen.cs:1580 
-  at RepeatingBackground.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\RepeatingBackground.cs:16 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/Physics/DynamicsBindings.gen.cs Line: 1580)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Rigidbody:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Rigidbody.get_position () [0x00004] in C:\buildslave\unity\build\artifacts\generated\common\modules\Physics\DynamicsBindings.gen.cs:1580 
-  at RepeatingBackground.FixedUpdate () [0x00001] in E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\Scripts\RepeatingBackground.cs:16 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/Physics/DynamicsBindings.gen.cs Line: 1580)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.669707 ms
-System memory in use before: 55.9 MB.
-System memory in use after: 55.9 MB.
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 673.
-Total: 0.398574 ms (FindLiveObjects: 0.038488 ms CreateObjectMapping: 0.019101 ms MarkObjects: 0.335566 ms  DeleteObjects: 0.003991 ms)
-
-playtime
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-PauseScript:SetUpStates() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:64)
-PauseScript:Start() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:28)
- 
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/PauseScript.cs Line: 64)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 pauseMenu
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-PauseScript:SetUpStates() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:64)
-PauseScript:PushState(PauseMenu) (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:120)
-PauseScript:PauseGame() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:97)
-PauseScript:Update() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:73)
  
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/PauseScript.cs Line: 64)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.880683 ms
-System memory in use before: 56.1 MB.
-System memory in use after: 55.6 MB.
+UnloadTime: 1.515327 ms
 
-Unloading 67 unused Assets to reduce memory usage. Loaded Objects now: 859.
-Total: 0.545116 ms (FindLiveObjects: 0.031931 ms CreateObjectMapping: 0.019101 ms MarkObjects: 0.392871 ms  DeleteObjects: 0.100356 ms)
+Unloading 73 unused Assets to reduce memory usage. Loaded Objects now: 844.
+Total: 1.372046 ms (FindLiveObjects: 0.136712 ms CreateObjectMapping: 0.030380 ms MarkObjects: 1.052230 ms  DeleteObjects: 0.151902 ms)
 
 playtime
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-PauseScript:SetUpStates() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:64)
-PauseScript:Start() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\PauseScript.cs:28)
  
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/PauseScript.cs Line: 64)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Game Exit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-MenuScript:ExitGame() (at E:\Prototype_W_UI (2)\Prototype_W_UI\Assets\UI\MenuScript.cs:146)
-UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:154)
-UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:637)
-UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:773)
-UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:52)
-UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
-UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
-UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:50)
-UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:261)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:533)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:432)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:412)
-UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:186)
-UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:283)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.458855 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 671.
+Total: 0.766901 ms (FindLiveObjects: 0.084983 ms CreateObjectMapping: 0.046391 ms MarkObjects: 0.568607 ms  DeleteObjects: 0.064455 ms)
+
+playtime
  
-(Filename: E:/Prototype_W_UI (2)/Prototype_W_UI/Assets/UI/MenuScript.cs Line: 146)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1c24 -> priority: 1 
+  Thread -> id: 11c4 -> priority: 1 
+  Thread -> id: 1b1c -> priority: 1 
+  Thread -> id: 2024 -> priority: 1 
+pauseMenu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+optionsMenu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pauseMenu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
