@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -20,12 +21,21 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject heart1, heart2, heart3;
     public static int health;
+    public float IeFrames = 0.3f;
+
+    public Image damageImage;
+    public bool damaged;
+
+    public bool ImmuneToDamage;
+
+    public Color screenFlash = new Color(1.0f, 0f, 0f, 0.1f);
 
     public PauseScript UIScript;
 
+
+
     void Start()
 	{
-        PauseScript UIScript = GetComponent<PauseScript>();
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
@@ -54,10 +64,15 @@ public class PlayerController : MonoBehaviour {
         }
 
         //Debug Testing
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.Z) && !ImmuneToDamage)
         {
             TakeDamage(1);
             Debug.Log(health);
+        }
+
+        if (!damaged)
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime);
         }
 
         SetHealth();
@@ -86,10 +101,11 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision)
 	{
-		if (collision.gameObject.tag == "enemy")
+		if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemyBullet" && !ImmuneToDamage)
 		{
-
             TakeDamage(1);
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
 		}
 	}
 
@@ -121,7 +137,7 @@ public class PlayerController : MonoBehaviour {
                 heart1.SetActive(false);
                 heart2.SetActive(false);
                 heart3.SetActive(false);
-                Debug.Log("player death");
+                
                 UIScript.GameOver();
                 break;
         }
@@ -129,7 +145,33 @@ public class PlayerController : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
+        damaged = true;
+        StartCoroutine(InvisibilityFrames());
         health -= amount;
+        DamageFlash();
+    }
+
+    public void DamageFlash()
+    {
+        if(damaged)
+        {
+            damageImage.color = screenFlash;
+        }
+        if(damaged && health == 0)
+        {
+            damageImage.color = Color.clear;
+        }
+        damaged = false;
+    }
+
+    public IEnumerator InvisibilityFrames()
+    {
+        damaged = true;
+        ImmuneToDamage = true;
+        yield return new WaitForSeconds(IeFrames);
+        damaged = false;
+        ImmuneToDamage = false;
+
     }
 
 }
