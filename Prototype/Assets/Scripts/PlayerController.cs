@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool ImmuneToDamage;
 
-    public Color screenFlash = new Color(1.0f, 0f, 0f, 0.1f);
+    public Color screenFlash = new Color(1.0f, 0f, 0f, 1f);
 
     public PauseScript UIScript;
 
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 
         if (!damaged)
         {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime);
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime * 10);
         }
 
         SetHealth();
@@ -119,7 +119,6 @@ public class PlayerController : MonoBehaviour {
 
 			GetComponent<MeshCollider> ().enabled = false;
 			Invoke ("hit", 0.1f);
-
 		}
 	}
 
@@ -159,7 +158,6 @@ public class PlayerController : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
-        damaged = true;
         StartCoroutine(InvisibilityFrames());
         health -= amount;
         DamageFlash();
