@@ -25,9 +25,9 @@ public class ebulletController : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			Destroy (collision.gameObject);
+			//Destroy (collision.gameObject);
 			Destroy (gameObject);
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+			//SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
 
 	}
