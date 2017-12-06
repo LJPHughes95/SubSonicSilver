@@ -25,11 +25,11 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (enemyRB.position.y <= 4 && speed < 0)
+		if (enemyRB.position.y <= -14 && speed < 0)
 		{
 			changeDirection ();
 		}
-		if (enemyRB.position.y >= 24 && speed > 0)
+		if (enemyRB.position.y >= 14 && speed > 0)
 		{
 			changeDirection ();
 		}

@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool ImmuneToDamage;
 
-    public Color screenFlash = new Color(1.0f, 0f, 0f, 0.1f);
+    public Color screenFlash = new Color(1.0f, 0f, 0f, 1f);
 
     public PauseScript UIScript;
 
-
+  	int i;
 
     void Start()
 	{
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 
         if (!damaged)
         {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime);
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime * 10);
         }
 
         SetHealth();
@@ -86,26 +86,39 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 0, 0);
+            myRB.rotation = Quaternion.Euler(0, 90, 0);
             direction = 1;
         }
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 180, 0);
+            myRB.rotation = Quaternion.Euler(0, 270, 0);
             direction = -1;
         }
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         myRB.velocity = movement * speed;
+
+		if (transform.position.y >= 15) {
+			transform.position = new Vector3 (transform.position.x, 15, transform.position.z);
+		}
+		if (transform.position.y <= -15)
+		{
+			transform.position = new Vector3 (transform.position.x, -10, transform.position.z);
+		}
+
     }
 
 	void OnCollisionEnter (Collision collision)
 	{
 		if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemyBullet" && !ImmuneToDamage)
 		{
+
             TakeDamage(1);
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
+
+			GetComponent<MeshCollider> ().enabled = false;
+			Invoke ("hit", 0.1f);
 		}
 	}
 
@@ -113,7 +126,7 @@ public class PlayerController : MonoBehaviour {
     {
         return direction;
     }
-
+  
     public void SetHealth()
     {
         switch(health)
@@ -145,7 +158,6 @@ public class PlayerController : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
-        damaged = true;
         StartCoroutine(InvisibilityFrames());
         health -= amount;
         DamageFlash();
@@ -173,5 +185,23 @@ public class PlayerController : MonoBehaviour {
         ImmuneToDamage = false;
 
     }
+  
+	public void hit()
+	{
+		GetComponent<MeshRenderer> ().enabled = false;
+		Invoke ("reset", 0.2f);
+	}
 
+	public void reset()
+	{
+		if (i < 2) {
+			GetComponent<MeshRenderer> ().enabled = true;
+			i += 1;
+			Invoke ("hit", 0.2f);
+		} else {
+			GetComponent<MeshRenderer> ().enabled = true;
+			i = 0;
+			GetComponent<MeshCollider> ().enabled = true;
+		}
+	}
 }

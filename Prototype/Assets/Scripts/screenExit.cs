@@ -8,4 +8,9 @@ public class screenExit : MonoBehaviour {
 	{
 		Destroy (other.gameObject);
 	}
+
+	public Vector3 returnPosition()
+	{
+		return transform.position;
+	}
 }
