@@ -10,13 +10,15 @@ public class PauseScript : MonoBehaviour {
     {
         playtime,
         pauseMenu,
-        optionsMenu
+        optionsMenu,
+        gameOverMenu
     }
 
     public bool paused;
 
     public GameObject pauseScreen;
     public GameObject optionsScreen;
+    public GameObject gameOverScreen;
 
     private PauseMenu pauseMenu;
     private Stack<PauseMenu> pauseMenuStack = new Stack<PauseMenu>();
@@ -36,6 +38,7 @@ public class PauseScript : MonoBehaviour {
                 {
                     pauseScreen.SetActive(false);
                     optionsScreen.SetActive(false);
+                    gameOverScreen.SetActive(false);
                     Time.timeScale = 1;
                 }
                 break;
@@ -43,6 +46,7 @@ public class PauseScript : MonoBehaviour {
                 {
                     pauseScreen.SetActive(true);
                     optionsScreen.SetActive(false);
+                    gameOverScreen.SetActive(false);
                     Time.timeScale = 0;
                 }
                 break;
@@ -50,6 +54,15 @@ public class PauseScript : MonoBehaviour {
                 {
                     pauseScreen.SetActive(false);
                     optionsScreen.SetActive(true);
+                    gameOverScreen.SetActive(false);
+                    Time.timeScale = 0;
+                }
+                break;
+            case PauseMenu.gameOverMenu:
+                {
+                    pauseScreen.SetActive(false);
+                    optionsScreen.SetActive(false);
+                    gameOverScreen.SetActive(true);
                     Time.timeScale = 0;
                 }
                 break;
@@ -57,6 +70,7 @@ public class PauseScript : MonoBehaviour {
                 {
                     pauseScreen.SetActive(false);
                     optionsScreen.SetActive(false);
+                    gameOverScreen.SetActive(false);
                     Time.timeScale = 1;
                 }
                 break;
@@ -107,12 +121,22 @@ public class PauseScript : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
+    public void GameOver()
+    {
+        PushState(PauseMenu.gameOverMenu);
+    }
+
+    public void RetryLevel()
+    {
+        pauseMenuStack.Clear();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void PopState()
     {
         pauseMenuStack.Pop();
         SetUpStates();
     }
-
 
     public void PushState(PauseMenu state)
     {
