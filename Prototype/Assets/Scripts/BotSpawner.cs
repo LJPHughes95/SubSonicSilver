@@ -14,48 +14,47 @@ public class BotSpawner : MonoBehaviour {
 	float timer;
 	float i;
 	int d;
-	float x;
-	float y;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		myRB = GetComponent<Rigidbody> ();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		SpawnEnemies ();
+		Invoke("SpawnEnemies", 0.0f);
 	}
 
-	void SpawnEnemies()
-	{
+	// Update is called once per frame
+	void Update () 
+	{	
 		timer += Time.deltaTime;
-		i = Random.Range (5, 10);
-		if (timer > i)
+		if (timer > 10) 
 		{
-			for (int t=0; t < 2; t++)
+			SpawnEnemies ();
+			timer = 0;
+		}
+	}
+
+	public void SpawnEnemies()
+	{
+		i = Random.Range (2, 3);
+		for (int w=1;  w < i; w++)
+		{
+			for (int t=0; t < 3; t++)
 			{
-				d = Random.Range (1, 2);
+				d = Random.Range (1, 3);
 				switch (d) {
 				case 0:
-					spawnL = new Vector3 (myRB.position.x + Random.Range(15,50), Random.Range (-14, 14), 0);
+					spawnL = new Vector3 (myRB.position.x + 10, Random.Range (-14, 14), 0);
 					Instantiate (bot, spawnL, Quaternion.Euler (0, 270, 0));
 					break;
 				case 1:
-					spawnL = new Vector3 (myRB.position.x + Random.Range(15,50), Random.Range (-14, 14), 0);
+					spawnL = new Vector3 (myRB.position.x + 10, Random.Range (-14, 14), 0);
+					Instantiate (bot2, spawnL, Quaternion.Euler (0, 270, 0));
+					break;
+				case 2:
+					spawnL = new Vector3 (myRB.position.x + 10, Random.Range (-14, 14), 0);
 					Instantiate (bot2, spawnL, Quaternion.Euler (0, 270, 0));
 					break;
 				}
 			}
-
-			spawnL = new Vector3(myRB.position.x + Random.Range(15,50), Random.Range(-14, 14), 0);
-			Instantiate(bot, spawnL, Quaternion.Euler(0,270,0));
-			spawnL = new Vector3(myRB.position.x + Random.Range(15,50), Random.Range(-14, 14), 0);
-			Instantiate(bot, spawnL, Quaternion.Euler(0,270,0));
-			spawnL = new Vector3(myRB.position.x + Random.Range(15,50), Random.Range(-14, 14), 0);
-			Instantiate(bot, spawnL, Quaternion.Euler(0,270,0));
-			timer = 0.0f;
 		}
 	}
 }

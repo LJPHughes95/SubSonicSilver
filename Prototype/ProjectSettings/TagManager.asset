@@ -8,6 +8,8 @@ TagManager:
   - pBullet
   - shield
   - enemyBullet
+  - clouds
+  - spawn
   layers:
   - Default
   - TransparentFX

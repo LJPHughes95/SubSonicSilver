@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 54917697149992986}
   - component: {fileID: 114498862465295400}
   - component: {fileID: 65304591293172644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: normal cloud
-  m_TagString: Untagged
+  m_TagString: clouds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94097f3b0a5b17b4a8cf83d319abc6b4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.60784316, g: 0.078431375, b: 0.003921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

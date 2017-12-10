@@ -10,7 +10,7 @@ public class SBotController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 15;
+		speed = 0;
 		enemyRB = GetComponent<Rigidbody> ();
 	}
 
@@ -30,7 +30,7 @@ public class SBotController : MonoBehaviour {
 
 	void changeDirection()
 	{
-		speed *= -1;
+		speed *= 0;
 	}
 }
 	
