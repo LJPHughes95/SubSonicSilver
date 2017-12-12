@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class bulletController : MonoBehaviour {
 
+    public int projDirection;
 	public float speed;
-
-	Rigidbody bullet;
 
 	// Use this for initialization
 	void Start () {
-		speed = 50f;
-		bullet = GetComponent<Rigidbody> ();
+        projDirection = PlayerController.playerInstance.GetDirection();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-       
-		bullet.velocity = new Vector3( speed, 0, 0);
+        transform.position += new Vector3(projDirection * speed, 0.0f, 0.0f);
+
         Destroy(gameObject, 2.0f);
 	}
 
