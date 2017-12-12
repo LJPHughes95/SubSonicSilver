@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+
         if(health > 3)
         {
             health = 3;
