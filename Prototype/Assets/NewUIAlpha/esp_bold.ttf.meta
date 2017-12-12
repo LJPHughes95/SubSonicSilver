@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bd130c8361c70584184f4bc6d72ca392
+timeCreated: 1512726156
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ESP_Bold
+  fontNames:
+  - ESP_Bold
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

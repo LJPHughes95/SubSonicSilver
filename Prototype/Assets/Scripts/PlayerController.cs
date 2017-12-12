@@ -41,12 +41,12 @@ public class PlayerController : MonoBehaviour {
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
         playerInstance = this;
-        direction = 1;
 		myRB = GetComponent<Rigidbody>();
 	}
 
     private void Update()
     {
+
         if(health > 3)
         {
             health = 3;
