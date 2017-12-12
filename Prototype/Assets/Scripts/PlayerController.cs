@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour {
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
         playerInstance = this;
-        direction = 1;
 		myRB = GetComponent<Rigidbody>();
 	}
 
@@ -82,18 +81,16 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
 	{
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = 0.75f;
         float moveVertical = Input.GetAxis("Vertical");
 
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 90, 0);
-            direction = 1;
+			moveHorizontal = 1.0f;
         }
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
-            myRB.rotation = Quaternion.Euler(0, 270, 0);
-            direction = -1;
+			moveHorizontal = 0.5f;
         }
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
@@ -104,7 +101,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (transform.position.y <= -15)
 		{
-			transform.position = new Vector3 (transform.position.x, -10, transform.position.z);
+			transform.position = new Vector3 (transform.position.x, -15, transform.position.z);
 		}
 
     }
