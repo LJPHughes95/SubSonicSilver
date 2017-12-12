@@ -25,7 +25,6 @@ public class PauseScript : MonoBehaviour {
 
     private void Start()
     {
-        //paused = false;
         pauseMenuStack.Push(PauseMenu.playtime);
         SetUpStates();
     }
@@ -99,6 +98,11 @@ public class PauseScript : MonoBehaviour {
         }
     }
 
+    public void StartGame()
+    {
+        PushState(PauseMenu.playtime);
+    }
+
     public void ResumeGame()
     {
         pauseMenuStack.Clear();
@@ -140,6 +144,7 @@ public class PauseScript : MonoBehaviour {
 
     public void PushState(PauseMenu state)
     {
+        Debug.Log(state);
         pauseMenuStack.Push(state);
         SetUpStates();
     }
