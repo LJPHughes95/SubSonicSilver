@@ -4,49 +4,43 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	public float speed;
+	public Vector3 speed;
 
 	Rigidbody enemyRB;
 
 	public Transform emitter;
 	public Rigidbody bullet;
-
-	public float minShootTime;
-	public float maxShootTIme;
+	public float shootTime;
 
 	float timer;
-	float i;
+	private float multiplier;
 
 	// Use this for initialization
 	void Start () {
-		speed = 15;
+		speed = new Vector3 (8, 0, 0);
 		enemyRB = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (enemyRB.position.y <= -14 && speed < 0)
+		multiplier = 0.75f;
+
+		if(Input.GetAxisRaw("Horizontal") > 0)
 		{
-			changeDirection ();
+			multiplier = 1.0f;
 		}
-		if (enemyRB.position.y >= 14 && speed > 0)
+		if(Input.GetAxisRaw("Horizontal") < 0)
 		{
-			changeDirection ();
+			multiplier = 0.5f;
 		}
 
-		enemyRB.velocity = new Vector3 (0, speed, 0);
+		enemyRB.velocity = speed * multiplier;
 
 		timer += Time.deltaTime;
-		i = Random.Range (minShootTime, maxShootTIme);
-		if (timer > i)
+		if (timer > shootTime)
 		{
 			Instantiate (bullet, emitter.position, Quaternion.identity);
 			timer = 0;
 		}
-	}
-		
-	void changeDirection()
-	{
-		speed *= -1;
 	}
 }

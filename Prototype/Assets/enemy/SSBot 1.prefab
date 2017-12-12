@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506920996310128}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.13, y: -8.3, z: 102.2501}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_Children:
   - {fileID: 4674013727030966}
@@ -244,13 +244,13 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.5020447
-        value: 0
+        time: 0.47528076
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -303,11 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f139b370f56bb40aedb9970b523a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: {x: 0, y: 0, z: 0}
   emitter: {fileID: 4674013727030966}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  minShootTime: 1
-  maxShootTIme: 2
+  shootTime: 0.75
 --- !u!198 &198575981550076338
 ParticleSystem:
   m_ObjectHideFlags: 1

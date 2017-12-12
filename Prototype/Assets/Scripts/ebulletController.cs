@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ebulletController : MonoBehaviour {
 
-	public float speed;
+	public int speed;
 	Rigidbody bullet;
 
 	// Use this for initialization
 	void Start () {
-		speed = -20;
+		speed = -50;
 		bullet = GetComponent<Rigidbody> ();
 	}
 
@@ -18,7 +18,7 @@ public class ebulletController : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		bullet.velocity = new Vector3( speed, 0, 0);
-		Destroy (gameObject, 4.0f);
+		Destroy (gameObject, 2.0f);
 	}
 
 	void OnCollisionEnter (Collision collision)

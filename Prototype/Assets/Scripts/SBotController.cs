@@ -4,33 +4,32 @@ using UnityEngine;
 
 public class SBotController : MonoBehaviour {
 
-	public float speed;
-
 	Rigidbody enemyRB;
+
+	public Vector3 speed;
+	private float multiplier;
 
 	// Use this for initialization
 	void Start () {
-		speed = 0;
+		speed = new Vector3 (8, 0, 0);
 		enemyRB = GetComponent<Rigidbody> ();
+
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (enemyRB.position.y <= 4 && speed < 0)
+		 multiplier = 0.75f;
+
+		if(Input.GetAxisRaw("Horizontal") > 0)
 		{
-			changeDirection ();
+			multiplier = 1.0f;
 		}
-		if (enemyRB.position.y >= 24 && speed > 0)
+		if(Input.GetAxisRaw("Horizontal") < 0)
 		{
-			changeDirection ();
+			multiplier = 0.5f;
 		}
 
-		enemyRB.velocity = new Vector3 (0, speed, 0);
-	}
-
-	void changeDirection()
-	{
-		speed *= 0;
+		enemyRB.velocity = speed * multiplier;
 	}
 }
 	
