@@ -10,8 +10,7 @@ public class ebulletController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = -50;
-
+		speed = -15;
 		bullet = GetComponent<Rigidbody> ();
 	}
 
