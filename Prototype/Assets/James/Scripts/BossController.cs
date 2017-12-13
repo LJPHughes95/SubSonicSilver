@@ -11,9 +11,6 @@ public class BossController : MonoBehaviour {
 
 	public Transform player;
 	Transform offset;
-	public Transform emitter2;
-	
-	public Rigidbody bullet;
 	
 	public static int health;
 
@@ -25,7 +22,7 @@ public class BossController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		health = 5;
-		speed = 15;
+		speed = 5;
 		bossRB = GetComponent<Rigidbody> ();
 	}
 	
@@ -40,7 +37,7 @@ public class BossController : MonoBehaviour {
 		{
 			changeDirection ();
 		}
-		if (bossRB.position.y >= 14 && speed > 0)
+		if (bossRB.position.y >= 0 && speed > 0)
 		{
 			changeDirection ();
 		}
