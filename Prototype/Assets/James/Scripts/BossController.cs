@@ -8,28 +8,16 @@ public class BossController : MonoBehaviour {
 	public float speed;
 	
 	Rigidbody bossRB;
-	
-	public Transform emitter;
+
+	public Transform player;
+	Transform offset;
 	public Transform emitter2;
 	
 	public Rigidbody bullet;
 	
 	public static int health;
-	
-	public Image damageImage;
-    public bool damaged;
 
-    public bool ImmuneToDamage;
-	
-	public float minShootTime1;
-	public float maxShootTIme1;
-	
-	public float minShootTime2;
-	public float maxShootTime2;
-	
-	public float IeFrames = 0.3f;
-	
-	public Color screenFlash = new Color(0.8f, 0.4f, 0f, 1f);
+	public bool immune;
 	
 	float timer;
 	float i;
@@ -59,20 +47,6 @@ public class BossController : MonoBehaviour {
 
 		bossRB.velocity = new Vector3 (0, speed, 0);
 
-		timer += Time.deltaTime;
-		i = Random.Range (minShootTime1, maxShootTIme1);
-		if (timer > i)
-		{
-			Instantiate (bullet, emitter.position, Quaternion.identity);
-			timer = 0;
-		}
-		
-		i = Random.Range (minShootTime2, maxShootTime2);
-		if (timer > i)
-		{
-			Instantiate (bullet, emitter2.position, Quaternion.identity); 
-			timer = 0;
-		}
 	
 	}
 		
@@ -83,32 +57,7 @@ public class BossController : MonoBehaviour {
 	
 	 public void TakeDamage(int amount)
     {
-        StartCoroutine(InvisibilityFrames());
         health -= amount;
-        DamageFlash();
-    }
-	
-	public void DamageFlash()
-    {
-        if(damaged)
-        {
-            damageImage.color = screenFlash;
-        }
-        if(damaged && health == 0)
-        {
-            damageImage.color = Color.clear;
-        }
-        damaged = false;
-    }
-	
-	 public IEnumerator InvisibilityFrames()
-    {
-        damaged = true;
-        ImmuneToDamage = true;
-        yield return new WaitForSeconds(IeFrames);
-        damaged = false;
-        ImmuneToDamage = false;
-
     }
   
 	public void hit()
@@ -126,7 +75,6 @@ public class BossController : MonoBehaviour {
 		} else {
 			GetComponent<MeshRenderer> ().enabled = true;
 			i = 0;
-			GetComponent<MeshCollider> ().enabled = true;
 		}
 	}
 }
