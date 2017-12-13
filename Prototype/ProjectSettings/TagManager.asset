@@ -9,6 +9,7 @@ TagManager:
   - shield
   - enemyBullet
   - Boss
+  - turret
   layers:
   - Default
   - TransparentFX
