@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  ExplosionGo: {fileID: 1041610948643242, guid: 8ac3af16821cfaf418b012eb90398b24,
+  ExplosionGo: {fileID: 1041610948643242, guid: 9c96f630afb1c0746bd864ca01fe15e1,
     type: 2}
 --- !u!212 &212204895543506012
 SpriteRenderer:

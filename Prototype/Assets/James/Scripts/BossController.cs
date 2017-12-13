@@ -31,18 +31,20 @@ public class BossController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
 		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
+
 
 		if(health > 5)
         {
             health = 5;
         }
 		
-		if (bossRB.position.y <= -14 && speed < 0)
+		if (bossRB.position.y <= -13 && speed < 0)
 		{
 			changeDirection ();
 		}
-		if (bossRB.position.y >= 0 && speed > 0)
+		if (bossRB.position.y >= 4 && speed > 0)
 		{
 			changeDirection ();
 		}

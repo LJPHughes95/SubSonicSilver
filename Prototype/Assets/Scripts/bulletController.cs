@@ -36,7 +36,7 @@ public class bulletController : MonoBehaviour {
 			Destroy (collision.gameObject);
 			Destroy (gameObject);
 		}
-		if (collision.gameObject.tag == "turret")
+		if (collision.gameObject.tag == "turret" || collision.gameObject.tag == "Boss")
 		{
 			PlayExplosion();
 			Destroy (gameObject);

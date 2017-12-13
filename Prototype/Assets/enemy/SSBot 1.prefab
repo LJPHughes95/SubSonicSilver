@@ -69,9 +69,9 @@ GameObject:
   - component: {fileID: 4670669260450070}
   - component: {fileID: 33886693239136416}
   - component: {fileID: 23174549922545134}
-  - component: {fileID: 114932631068614892}
   - component: {fileID: 54251113697890572}
   - component: {fileID: 64176752714989634}
+  - component: {fileID: 114817018127715676}
   m_Layer: 8
   m_Name: SSBot 1
   m_TagString: enemy
@@ -292,7 +292,7 @@ TrailRenderer:
     textureMode: 1
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114932631068614892
+--- !u!114 &114817018127715676
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -300,13 +300,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506920996310128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f139b370f56bb40aedb9970b523a66, type: 3}
+  m_Script: {fileID: 11500000, guid: b6242cde2021f2c43a65feb78b9df46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
   emitter: {fileID: 4674013727030966}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  shootTime: 0.75
+  shootTime: 1
+  harder: 0
 --- !u!198 &198575981550076338
 ParticleSystem:
   m_ObjectHideFlags: 1
