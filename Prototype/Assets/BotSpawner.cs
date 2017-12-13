@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BotSpawner : MonoBehaviour {
 
@@ -64,14 +65,20 @@ public class BotSpawner : MonoBehaviour {
 
 		waveCountdown = timeBetweenWaves;
 
-		if (nextWave + 1 > waves.Length - 1) {
-			nextWave = 0;
-		}
-		else
-		{
-			nextWave++;
-		}
-	}
+		//if (nextWave + 1 > waves.Length - 1) {
+  //          Debug.Log(waves.Length);
+		//	nextWave = 0;
+  //      }
+        if(nextWave + 1 > waves.Length - 1)
+        {
+            Debug.Log("entered");
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            nextWave++;
+        }
+    }
 
 	bool anyEnemies()
 	{
