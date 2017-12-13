@@ -18,6 +18,7 @@ public class RepeatingBackground : MonoBehaviour {
 		
 		bG = GetComponent<BoxCollider> ();
 		BG = GetComponent<Rigidbody> ();
+		offset = 50;
 	}
 
 	// Update is called once per frame

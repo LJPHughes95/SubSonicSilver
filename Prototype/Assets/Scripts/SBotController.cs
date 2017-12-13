@@ -20,8 +20,6 @@ public class SBotController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		//player = PlayerController.test;
-
 		 multiplier = 0.75f;
 
 		if(Input.GetAxisRaw("Horizontal") > 0)
