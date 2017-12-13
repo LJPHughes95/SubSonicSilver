@@ -300,13 +300,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506920996310128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f139b370f56bb40aedb9970b523a66, type: 3}
+  m_Script: {fileID: 11500000, guid: b6242cde2021f2c43a65feb78b9df46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
   emitter: {fileID: 4674013727030966}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  shootTime: 0.75
+  shootTime: 1
+  harder: 0
 --- !u!198 &198575981550076338
 ParticleSystem:
   m_ObjectHideFlags: 1

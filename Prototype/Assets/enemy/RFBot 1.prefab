@@ -70,7 +70,6 @@ GameObject:
   - component: {fileID: 33742733757438498}
   - component: {fileID: 23507331669988808}
   - component: {fileID: 54567705614692456}
-  - component: {fileID: 114410367767786082}
   - component: {fileID: 64452817711936406}
   - component: {fileID: 114243052805281266}
   m_Layer: 8
@@ -301,28 +300,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1879956647759800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f139b370f56bb40aedb9970b523a66, type: 3}
+  m_Script: {fileID: 11500000, guid: b6242cde2021f2c43a65feb78b9df46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
   emitter: {fileID: 4079629849327332}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  shootTime: 0.5
---- !u!114 &114410367767786082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1879956647759800}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f139b370f56bb40aedb9970b523a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 0}
-  emitter: {fileID: 4079629849327332}
-  bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  shootTime: 0
+  shootTime: 0.75
+  harder: 1
 --- !u!198 &198665416485431398
 ParticleSystem:
   m_ObjectHideFlags: 1

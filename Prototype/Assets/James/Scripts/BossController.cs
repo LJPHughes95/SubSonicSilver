@@ -8,28 +8,16 @@ public class BossController : MonoBehaviour {
 	public float speed;
 	
 	Rigidbody bossRB;
-	
-	public Transform emitter;
-	public Transform emitter2;
-	
-	public Rigidbody bullet;
+
+	public Transform player;
+	Vector3 offset;
 	
 	public static float health;
 	
 	public Image damageImage;
     public bool damaged;
 
-    public bool ImmuneToDamage;
-	
-	public float minShootTime1;
-	public float maxShootTIme1;
-	
-	public float minShootTime2;
-	public float maxShootTime2;
-	
-	public float IeFrames = 0.3f;
-	
-	public Color screenFlash = new Color(0.8f, 0.4f, 0f, 1f);
+	public bool immune;
 	
 	float timer;
 	float i;
@@ -39,11 +27,16 @@ public class BossController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 1.0f;
-        bossCurrentHealth = health;
-        bossHealthBar.fillAmount = bossCurrentHealth;
+
+    health = 1.0f;
+    bossCurrentHealth = health;
+    bossHealthBar.fillAmount = bossCurrentHealth;
 		speed = 15;
+
 		bossRB = GetComponent<Rigidbody> ();
+		offset = transform.position - player.position;
+		offset.y = 0;
+		offset.z = 0;
 	}
 
     public void Update()
@@ -54,9 +47,11 @@ public class BossController : MonoBehaviour {
         }
     }
 
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
 
-    // Update is called once per frame
-    void FixedUpdate () {
 		if(health > 5)
         {
             health = 5;
@@ -66,7 +61,7 @@ public class BossController : MonoBehaviour {
 		{
 			changeDirection ();
 		}
-		if (bossRB.position.y >= 14 && speed > 0)
+		if (bossRB.position.y >= 0 && speed > 0)
 		{
 			changeDirection ();
 		}
@@ -102,29 +97,12 @@ public class BossController : MonoBehaviour {
         Debug.Log(bossCurrentHealth);
         DamageFlash();
     }
-	
-	public void DamageFlash()
-    {
-        if(damaged)
-        {
-            damageImage.color = screenFlash;
-        }
-        if(damaged && health == 0)
-        {
-            damageImage.color = Color.clear;
-        }
-        damaged = false;
-    }
-	
-	 public IEnumerator InvisibilityFrames()
-    {
-        damaged = true;
-        ImmuneToDamage = true;
-        yield return new WaitForSeconds(IeFrames);
-        damaged = false;
-        ImmuneToDamage = false;
 
-    }
+	void OnCollisionEnter(Collision other)
+	{
+				health--;
+				Invoke ("hit", 0.2f);
+	}
   
 	public void hit()
 	{
@@ -141,7 +119,6 @@ public class BossController : MonoBehaviour {
 		} else {
 			GetComponent<MeshRenderer> ().enabled = true;
 			i = 0;
-			GetComponent<MeshCollider> ().enabled = true;
 		}
 	}
 }
