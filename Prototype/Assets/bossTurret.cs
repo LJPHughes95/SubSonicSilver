@@ -31,7 +31,7 @@ public class bossTurret : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "bullet") {
 			if (health == 1) {
