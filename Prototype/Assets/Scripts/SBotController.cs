@@ -35,5 +35,12 @@ public class SBotController : MonoBehaviour {
 
 		enemyRB.velocity = speed * multiplier;
 	}
+
+	void onCollisionEnter (Collider col)
+	{
+		if (col.gameObject.tag == "pBullet") {
+			Score.score += 200;
+		}
+	}
 }
 	

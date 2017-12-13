@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour {
 	public Rigidbody bullet;
 	public float shootTime;
 
+	public bool harder;
+
 	float timer;
 	private float multiplier;
 
@@ -41,6 +43,19 @@ public class EnemyController : MonoBehaviour {
 		{
 			Instantiate (bullet, emitter.position, Quaternion.identity);
 			timer = 0;
+		}
+	}
+
+	void onCollisionEnter (Collider col)
+	{
+		if (col.gameObject.tag == "pBullet") {
+			if (harder == true) {
+				Score.score += 150;
+			} 
+			else
+			{
+				Score.score = 100;
+			}
 		}
 	}
 }
