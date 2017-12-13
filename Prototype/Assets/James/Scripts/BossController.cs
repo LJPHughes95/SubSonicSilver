@@ -61,6 +61,12 @@ public class BossController : MonoBehaviour {
     {
         health -= amount;
     }
+
+	void OnCollisionEnter(Collider other)
+	{
+				health--;
+				Invoke ("hit", 0.2f);
+	}
   
 	public void hit()
 	{

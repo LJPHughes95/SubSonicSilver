@@ -8,7 +8,7 @@ public class bossTurret : MonoBehaviour {
 
 	public Rigidbody bullet;
 
-	public static int health;
+	public int health;
 
 	public float fireRate;
 
@@ -33,10 +33,13 @@ public class bossTurret : MonoBehaviour {
 
 	void OnCollisionEnter(Collider other)
 	{
-		if (other.gameObject.tag == "bullet") 
-		{
-			health--;
-			Invoke ("hit", 0.2f);
+		if (other.gameObject.tag == "bullet") {
+			if (health == 1) {
+
+			} else {
+				health--;
+				Invoke ("hit", 0.2f);
+			}
 		}
 	}
 		
