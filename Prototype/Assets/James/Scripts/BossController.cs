@@ -12,41 +12,22 @@ public class BossController : MonoBehaviour {
 	public Transform player;
 	Vector3 offset;
 	
-	public static float health;
-	
-	public Image damageImage;
-    public bool damaged;
+	public static int health;
 
 	public bool immune;
 	
 	float timer;
 	float i;
 
-    public float bossCurrentHealth;
-    public Image bossHealthBar;
-
 	// Use this for initialization
 	void Start () {
-
-    health = 1.0f;
-    bossCurrentHealth = health;
-    bossHealthBar.fillAmount = bossCurrentHealth;
-		speed = 15;
-
+		health = 15;
+		speed = 5;
 		bossRB = GetComponent<Rigidbody> ();
 		offset = transform.position - player.position;
 		offset.y = 0;
 		offset.z = 0;
 	}
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            TakeDamage(0.2f);
-        }
-    }
-
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -68,20 +49,7 @@ public class BossController : MonoBehaviour {
 
 		bossRB.velocity = new Vector3 (0, speed, 0);
 
-		timer += Time.deltaTime;
-		i = Random.Range (minShootTime1, maxShootTIme1);
-		if (timer > i)
-		{
-			Instantiate (bullet, emitter.position, Quaternion.identity);
-			timer = 0;
-		}
-		
-		i = Random.Range (minShootTime2, maxShootTime2);
-		if (timer > i)
-		{
-			Instantiate (bullet, emitter2.position, Quaternion.identity); 
-			timer = 0;
-		}
+	
 	}
 		
 	void changeDirection()
@@ -89,13 +57,9 @@ public class BossController : MonoBehaviour {
 		speed *= -1;
 	}
 	
-	 public void TakeDamage(float amount)
+	 public void TakeDamage(int amount)
     {
-        StartCoroutine(InvisibilityFrames());
-        bossCurrentHealth -= amount;
-        bossHealthBar.fillAmount = bossCurrentHealth;
-        Debug.Log(bossCurrentHealth);
-        DamageFlash();
+        health -= amount;
     }
 
 	void OnCollisionEnter(Collision other)
