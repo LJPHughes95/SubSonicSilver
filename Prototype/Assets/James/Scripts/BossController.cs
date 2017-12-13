@@ -14,7 +14,10 @@ public class BossController : MonoBehaviour {
 	
 	public Rigidbody bullet;
 	
-	public static int health;
+	public static float health;
+	
+	public Image damageImage;
+    public bool damaged;
 
     public bool ImmuneToDamage;
 	
@@ -30,6 +33,9 @@ public class BossController : MonoBehaviour {
 	
 	float timer;
 	float i;
+
+    public float bossCurrentHealth;
+    public Image bossHealthBar;
 
 	// Use this for initialization
 	void Start () {
@@ -47,10 +53,7 @@ public class BossController : MonoBehaviour {
             TakeDamage(0.2f);
         }
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
+
 
     // Update is called once per frame
     void FixedUpdate () {
@@ -70,7 +73,20 @@ public class BossController : MonoBehaviour {
 
 		bossRB.velocity = new Vector3 (0, speed, 0);
 
-	
+		timer += Time.deltaTime;
+		i = Random.Range (minShootTime1, maxShootTIme1);
+		if (timer > i)
+		{
+			Instantiate (bullet, emitter.position, Quaternion.identity);
+			timer = 0;
+		}
+		
+		i = Random.Range (minShootTime2, maxShootTime2);
+		if (timer > i)
+		{
+			Instantiate (bullet, emitter2.position, Quaternion.identity); 
+			timer = 0;
+		}
 	}
 		
 	void changeDirection()
@@ -78,9 +94,13 @@ public class BossController : MonoBehaviour {
 		speed *= -1;
 	}
 	
-	 public void TakeDamage(int amount)
+	 public void TakeDamage(float amount)
     {
-        health -= amount;
+        StartCoroutine(InvisibilityFrames());
+        bossCurrentHealth -= amount;
+        bossHealthBar.fillAmount = bossCurrentHealth;
+        Debug.Log(bossCurrentHealth);
+        DamageFlash();
     }
 	
 	public void DamageFlash()
