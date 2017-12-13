@@ -8,7 +8,7 @@ public class bossTurret : MonoBehaviour {
 
 	public Rigidbody bullet;
 
-	public int health;
+	public static int health;
 
 	public float fireRate;
 

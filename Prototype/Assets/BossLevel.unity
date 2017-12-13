@@ -2774,7 +2774,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 692871293}
-  speed: 0
+  speed: -2
 --- !u!65 &692871293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3365,7 +3365,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 893220343}
-  speed: 0
+  speed: -4
 --- !u!65 &893220343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4475,7 +4475,7 @@ GameObject:
   - component: {fileID: 1185593234}
   m_Layer: 13
   m_Name: Boss_Single_shot001
-  m_TagString: Boss
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4569,7 +4569,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitter: {fileID: 412953191}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  health: 3
   fireRate: 1
 --- !u!54 &1185593234
 Rigidbody:
@@ -4683,7 +4682,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 1240657880}
-  speed: 2
+  speed: -1
 --- !u!65 &1240657880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5071,7 +5070,6 @@ GameObject:
   - component: {fileID: 1559408380}
   - component: {fileID: 1559408379}
   - component: {fileID: 1559408377}
-  - component: {fileID: 1559408378}
   m_Layer: 0
   m_Name: Character_pose
   m_TagString: Untagged
@@ -5094,17 +5092,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1559408378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1559408376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c4cd0e9b6222246ba9422524a63c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1559408379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5323,7 +5310,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 1590637423}
-  speed: 0
+  speed: -2
 --- !u!65 &1590637423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6924,7 +6911,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 1956670109}
-  speed: 2
+  speed: -1
 --- !u!65 &1956670109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7408,7 +7395,7 @@ GameObject:
   - component: {fileID: 2000847297}
   m_Layer: 13
   m_Name: Boss_Minigun001
-  m_TagString: Boss
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7503,7 +7490,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitter: {fileID: 960704268}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  health: 5
   fireRate: 0.5
 --- !u!54 &2000847297
 Rigidbody:
@@ -8381,7 +8367,7 @@ MonoBehaviour:
   other: {fileID: 1559408377}
   offset: 0
   bG: {fileID: 2134412745}
-  speed: 0
+  speed: -4
 --- !u!65 &2134412745
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -410,7 +410,6 @@ GameObject:
   - component: {fileID: 79060443}
   - component: {fileID: 79060448}
   - component: {fileID: 79060447}
-  - component: {fileID: 79060446}
   m_Layer: 0
   m_Name: Character_pose
   m_TagString: Untagged
@@ -488,17 +487,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 79060441}
   m_Mesh: {fileID: 4300000, guid: 9ba6cb63b0a0e0e438b4dddfa7835d06, type: 3}
---- !u!114 &79060446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 79060441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c4cd0e9b6222246ba9422524a63c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &79060447
 Rigidbody:
   m_ObjectHideFlags: 0
