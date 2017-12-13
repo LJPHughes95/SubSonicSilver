@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour {
     public Image damageImage;
     public bool damaged;
 
+    public float currentHealth;
+    public float basePlayerHealth = 1;
+
     public bool ImmuneToDamage;
 
     public Color screenFlash = new Color(1.0f, 0f, 0f, 1f);
@@ -34,8 +37,14 @@ public class PlayerController : MonoBehaviour {
 
   	int i;
 
+    public Image healthbar;
+
     void Start()
 	{
+        currentHealth = basePlayerHealth;
+
+        //healthbar = GetComponent<Image>();
+        healthbar.fillAmount = currentHealth;
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
@@ -66,7 +75,7 @@ public class PlayerController : MonoBehaviour {
         //Debug Testing
         if(Input.GetKeyDown(KeyCode.Z) && !ImmuneToDamage)
         {
-            TakeDamage(1);
+            TakeDamage(0.25f);
             Debug.Log(health);
         }
 
@@ -154,11 +163,16 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         StartCoroutine(InvisibilityFrames());
-        health -= amount;
+        currentHealth -= amount;
+        healthbar.fillAmount =  currentHealth;
         DamageFlash();
+        if(currentHealth <= 0)
+        {
+            UIScript.GameOver();
+        }
     }
 
     public void DamageFlash()

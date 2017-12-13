@@ -14,7 +14,7 @@ public class BossController : MonoBehaviour {
 	
 	public Rigidbody bullet;
 	
-	public static int health;
+	public static float health;
 	
 	public Image damageImage;
     public bool damaged;
@@ -34,15 +34,29 @@ public class BossController : MonoBehaviour {
 	float timer;
 	float i;
 
+    public float bossCurrentHealth;
+    public Image bossHealthBar;
+
 	// Use this for initialization
 	void Start () {
-		health = 5;
+        health = 1.0f;
+        bossCurrentHealth = health;
+        bossHealthBar.fillAmount = bossCurrentHealth;
 		speed = 15;
 		bossRB = GetComponent<Rigidbody> ();
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            TakeDamage(0.2f);
+        }
+    }
+
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		if(health > 5)
         {
             health = 5;
@@ -73,7 +87,6 @@ public class BossController : MonoBehaviour {
 			Instantiate (bullet, emitter2.position, Quaternion.identity); 
 			timer = 0;
 		}
-	
 	}
 		
 	void changeDirection()
@@ -81,10 +94,12 @@ public class BossController : MonoBehaviour {
 		speed *= -1;
 	}
 	
-	 public void TakeDamage(int amount)
+	 public void TakeDamage(float amount)
     {
         StartCoroutine(InvisibilityFrames());
-        health -= amount;
+        bossCurrentHealth -= amount;
+        bossHealthBar.fillAmount = bossCurrentHealth;
+        Debug.Log(bossCurrentHealth);
         DamageFlash();
     }
 	
