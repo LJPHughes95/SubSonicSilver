@@ -10,7 +10,7 @@ public class BossController : MonoBehaviour {
 	Rigidbody bossRB;
 
 	public Transform player;
-	Transform offset;
+	Vector3 offset;
 	
 	public static int health;
 
@@ -21,13 +21,18 @@ public class BossController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 5;
+		health = 15;
 		speed = 5;
 		bossRB = GetComponent<Rigidbody> ();
+		offset = transform.position - player.position;
+		offset.y = 0;
+		offset.z = 0;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
+
 		if(health > 5)
         {
             health = 5;
