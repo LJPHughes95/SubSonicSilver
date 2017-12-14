@@ -17,7 +17,7 @@ public class bossTurret : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 3;
+		health = 2;
 		i = 0;
 	}
 
@@ -36,9 +36,11 @@ public class bossTurret : MonoBehaviour {
 		if (other.gameObject.tag == "pBullet") {
 			if (health == 0) {
 				Destroy (gameObject);
+				BossController.baseBossHealth -= 0.1f;
 			} else {
 				health--;
 				Invoke ("hit", 0.2f);
+				BossController.baseBossHealth -= 0.1f;
 			}
 		}
 	}

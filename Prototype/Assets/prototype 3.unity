@@ -777,7 +777,7 @@ MonoBehaviour:
   emitter: {fileID: 1364896201}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
   health: 2
-  fireRate: 0.5
+  fireRate: 0.75
 --- !u!1 &459275229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1404,7 @@ MonoBehaviour:
   speed: 0
   player: {fileID: 79060442}
   immune: 1
+  healthbar: {fileID: 718471677}
 --- !u!1 &992280119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2234,7 @@ MonoBehaviour:
   speed: 0.25
   player: {fileID: 79060442}
   immune: 0
+  healthbar: {fileID: 718471677}
 --- !u!54 &1602622971
 Rigidbody:
   m_ObjectHideFlags: 0

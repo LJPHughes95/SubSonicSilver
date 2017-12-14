@@ -15,13 +15,19 @@ public class BossController : MonoBehaviour {
 	public static int health;
 
 	public bool immune;
+
+	public Image healthbar;
+
+	public static float baseBossHealth = 1f;
 	
 	float timer;
 	float i;
 
 	// Use this for initialization
 	void Start () {
-		health = 3;
+
+		healthbar.fillAmount = baseBossHealth;
+		health = 4;
 		bossRB = GetComponent<Rigidbody> ();
 		offset = transform.position - player.position;
 		offset.y = 0;
@@ -37,11 +43,11 @@ public class BossController : MonoBehaviour {
 		if (GameObject.FindGameObjectWithTag ("turret") == null)
 		{
 			immune = false;
-		} 
+		}
 
-		if(health > 3)
+		if(health > 4)
         {
-            health = 3;
+            health = 4;
         }
 		
 		if (bossRB.position.y <= -13 && speed < 0)
@@ -55,17 +61,13 @@ public class BossController : MonoBehaviour {
 
 		bossRB.velocity = new Vector3 (0, speed, 0);
 
+		healthbar.fillAmount =  baseBossHealth;
 	
 	}
 	void changeDirection()
 	{
 		speed *= -1;
 	}
-	
-	 public void TakeDamage(int amount)
-    {
-        health -= amount;
-    }
 
 	void OnCollisionEnter(Collision other)
 	{
@@ -74,7 +76,14 @@ public class BossController : MonoBehaviour {
 		} else {
 			health--;
 			Invoke ("hit", 0.2f);
+			TakeDamage (0.1f);
 		}
+	}
+
+	public void TakeDamage(float damage)
+	{
+		baseBossHealth -= damage;
+		healthbar.fillAmount =  baseBossHealth;
 	}
   
 	public void hit()
