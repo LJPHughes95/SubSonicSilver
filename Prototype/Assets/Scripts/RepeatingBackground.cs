@@ -28,7 +28,7 @@ public class RepeatingBackground : MonoBehaviour {
 
 		BG.velocity = new Vector3 (speed, 0, 0);
 
-		if (other.position.x - offset > (transform.position.x + (width)))
+		if (other.position.x - offset > (transform.position.x + (bG.size.x* transform.localScale.x)))
 		{
 			RepositionBackground();
 		}
@@ -36,6 +36,6 @@ public class RepeatingBackground : MonoBehaviour {
 
 	private void RepositionBackground()
 	{
-		transform.position += new Vector3(width * 2.0f, 0, 0);
+		transform.position += new Vector3((bG.size.x* transform.localScale.x) * 2.0f, 0, 0);
 	}
 }

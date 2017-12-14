@@ -27,7 +27,7 @@ public class MenuScript : MonoBehaviour
 
     void Start()
     {
-        menuStack.Push(Menu.startScreen);
+		menuStack.Push(Menu.mainMenu);
         SetupStates();
     }
 
