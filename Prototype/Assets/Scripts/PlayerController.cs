@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemyBullet" && !ImmuneToDamage)
 		{
 
-            TakeDamage(1);
+            TakeDamage(0.2f);
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
 
