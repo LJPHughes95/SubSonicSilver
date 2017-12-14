@@ -21,8 +21,7 @@ public class BossController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 15;
-		speed = 0.25f;
+		health = 4;
 		bossRB = GetComponent<Rigidbody> ();
 		offset = transform.position - player.position;
 		offset.y = 0;
@@ -35,6 +34,10 @@ public class BossController : MonoBehaviour {
 
 		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y+ speed, transform.position.z);
 
+		if (GameObject.FindGameObjectWithTag ("turret") == null)
+		{
+			immune = false;
+		} 
 
 		if(health > 5)
         {
@@ -66,8 +69,13 @@ public class BossController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-				health--;
-				Invoke ("hit", 0.2f);
+
+		if (immune == true) {
+			health = health;
+		} else {
+			health--;
+			Invoke ("hit", 0.2f);
+		}
 	}
   
 	public void hit()

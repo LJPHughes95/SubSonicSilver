@@ -17,7 +17,7 @@ public class bossTurret : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 5;
+		health = 3;
 		i = 0;
 	}
 
@@ -33,9 +33,9 @@ public class bossTurret : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.tag == "bullet") {
-			if (health == 1) {
-
+		if (other.gameObject.tag == "pBullet") {
+			if (health == 0) {
+				Destroy (gameObject);
 			} else {
 				health--;
 				Invoke ("hit", 0.2f);
