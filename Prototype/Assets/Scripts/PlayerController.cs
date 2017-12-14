@@ -105,10 +105,10 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         myRB.velocity = movement * speed;
 
-		if (transform.position.y >= 15) {
+		if (transform.position.y >= 19) {
 			transform.position = new Vector3 (transform.position.x, 15, transform.position.z);
 		}
-		if (transform.position.y <= -15)
+		if (transform.position.y <= -9)
 		{
 			transform.position = new Vector3 (transform.position.x, -15, transform.position.z);
 		}
