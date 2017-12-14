@@ -21,7 +21,7 @@ public class BossController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 4;
+		health = 3;
 		bossRB = GetComponent<Rigidbody> ();
 		offset = transform.position - player.position;
 		offset.y = 0;
@@ -39,9 +39,9 @@ public class BossController : MonoBehaviour {
 			immune = false;
 		} 
 
-		if(health > 5)
+		if(health > 3)
         {
-            health = 5;
+            health = 3;
         }
 		
 		if (bossRB.position.y <= -13 && speed < 0)
@@ -71,7 +71,6 @@ public class BossController : MonoBehaviour {
 	{
 
 		if (immune == true) {
-			health = health;
 		} else {
 			health--;
 			Invoke ("hit", 0.2f);

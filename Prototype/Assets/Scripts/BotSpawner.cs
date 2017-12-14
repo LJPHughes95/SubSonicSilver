@@ -113,6 +113,6 @@ public class BotSpawner : MonoBehaviour {
 	void spawnEnemy (Transform _enemy)
 	{
 		Transform _sp = spawnPoints [Random.Range (0, spawnPoints.Length)];
-		Instantiate (_enemy, _sp.position, Quaternion.Euler (0, 270, 0));
+		Instantiate (_enemy, new Vector3(_sp.position.x,Random.Range(-13,13),_sp.position.z), Quaternion.Euler (0, 270, 0));
 	}
 }

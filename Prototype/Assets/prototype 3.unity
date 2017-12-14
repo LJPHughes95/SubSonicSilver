@@ -776,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitter: {fileID: 1364896201}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  health: 3
+  health: 2
   fireRate: 0.5
 --- !u!1 &459275229
 GameObject:
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitter: {fileID: 1904570722}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  health: 3
+  health: 2
   fireRate: 1
 --- !u!1 &1602622969 stripped
 GameObject:
