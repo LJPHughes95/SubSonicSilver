@@ -22,17 +22,18 @@ public class BossController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		health = 15;
-		speed = 5;
+		speed = 0.25f;
 		bossRB = GetComponent<Rigidbody> ();
 		offset = transform.position - player.position;
 		offset.y = 0;
 		offset.z = 0;
+		immune = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
+		transform.position = new Vector3 (player.position.x + offset.x, transform.position.y+ speed, transform.position.z);
 
 
 		if(health > 5)
@@ -53,7 +54,6 @@ public class BossController : MonoBehaviour {
 
 	
 	}
-		
 	void changeDirection()
 	{
 		speed *= -1;
