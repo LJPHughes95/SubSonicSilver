@@ -2610,7 +2610,7 @@ MonoBehaviour:
     count: 4
     rate: 1
   - name: 
-    enemy: {fileID: 400002, guid: 2a5e3fc61d8e49d429bac4043492204b, type: 3}
+    enemy: {fileID: 4304022881999556, guid: 2ebd7e62970bb404dbd7c76d0a3ffada, type: 2}
     count: 4
     rate: 1
   spawnPoints:
