@@ -12,19 +12,32 @@ public class EnemyController : MonoBehaviour {
 	public Rigidbody bullet;
 	public float shootTime;
 
+	float timer;
+	float move;
+
 	public bool harder;
 
-	float timer;
+	float timer2;
 	private float multiplier;
 
 	// Use this for initialization
 	void Start () {
-		speed = new Vector3 (8, 0, 0);
+		speed = new Vector3 (8, 4, 0);
 		enemyRB = GetComponent<Rigidbody> ();
+		move = 3;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		timer += Time.deltaTime;
+		if (timer > move || transform.position.y > 13 || transform.position.y < -13) 
+		{
+			changeDirection ();
+			timer = 0;
+			move = 6;
+		}
+
 		multiplier = 0.75f;
 
 		if(Input.GetAxisRaw("Horizontal") > 0)
@@ -57,5 +70,10 @@ public class EnemyController : MonoBehaviour {
 				Score.score = 100;
 			}
 		}
+	}
+
+	void changeDirection()
+	{
+		speed.y *= -1;
 	}
 }

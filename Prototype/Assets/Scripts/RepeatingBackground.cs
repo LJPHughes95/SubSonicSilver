@@ -11,6 +11,8 @@ public class RepeatingBackground : MonoBehaviour {
 
 	private Rigidbody BG;
 
+	public int width;
+
 	public float speed;
 
 	// Use this for initialization

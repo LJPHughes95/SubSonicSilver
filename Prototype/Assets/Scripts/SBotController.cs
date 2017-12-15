@@ -16,7 +16,7 @@ public class SBotController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = new Vector3 (8, 4, 0);
-		move = 3;
+		move = 5;
 		enemyRB = GetComponent<Rigidbody> ();
 	}
 
@@ -28,7 +28,7 @@ public class SBotController : MonoBehaviour {
 		{
 			changeDirection ();
 			timer = 0;
-			move = 4;
+			move = 10;
 		}
 
 

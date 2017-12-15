@@ -8,12 +8,22 @@ public class bulletController : MonoBehaviour {
 
 	Rigidbody bullet;
 
+	BoxCollider test;
+
 	public GameObject ExplosionGo;
 
 	// Use this for initialization
 	void Start () {
 		speed = 50f;
 		bullet = GetComponent<Rigidbody> ();
+		test = GetComponent<BoxCollider> ();
+		test.enabled = false;
+		Invoke ("collision", 0.1f);
+	}
+
+	void collision()
+	{
+		test.enabled = true;
 	}
 
 	// Update is called once per frame
