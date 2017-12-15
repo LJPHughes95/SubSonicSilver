@@ -11,6 +11,7 @@ public class bulletController : MonoBehaviour {
 	BoxCollider test;
 
 	public GameObject ExplosionGo;
+	public GameObject ExplosionGo2;
 
 	// Use this for initialization
 	void Start () {
@@ -42,7 +43,7 @@ public class bulletController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		if (collision.gameObject.tag == "Boss" && BossController.health <= 0){
-			PlayExplosion();
+			PlayExplosion2();
 			Destroy (collision.gameObject);
 			Destroy (gameObject);
 		}
@@ -56,6 +57,12 @@ public class bulletController : MonoBehaviour {
 	void PlayExplosion()
 	{
 		GameObject explosion = (GameObject)Instantiate(ExplosionGo);
+		explosion.transform.position = transform.position;
+	}
+
+	void PlayExplosion2()
+	{
+		GameObject explosion = (GameObject)Instantiate(ExplosionGo2);
 		explosion.transform.position = transform.position;
 	}
 }
