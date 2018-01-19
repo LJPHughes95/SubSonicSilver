@@ -306,7 +306,7 @@ MonoBehaviour:
   speed: {x: 0, y: 0, z: 0}
   emitter: {fileID: 4079629849327332}
   bullet: {fileID: 54652686723599512, guid: a1d5f32c92409cf44af0f8bfcb56354d, type: 2}
-  shootTime: 0.75
+  shootTime: 0.4
   harder: 1
 --- !u!198 &198665416485431398
 ParticleSystem:
