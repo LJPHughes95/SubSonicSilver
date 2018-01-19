@@ -8,20 +8,22 @@ public class PlayerController : MonoBehaviour {
 
     public static PlayerController playerInstance;
 
-	public float speed;
+    public float speed;
 
-	Rigidbody myRB;
-	public Transform emitter;
-	public Rigidbody bullet;
+    Rigidbody myRB;
+    public Transform emitter;
+    public Rigidbody bullet;
 
     public float bShootCooldown;
     public float shootCooldown;
 
     public int direction;
 
-    public GameObject heart1, heart2, heart3;
     public static int health;
     public float IeFrames = 0.3f;
+
+    public float shieldRegen;
+    public float baseShieldRegen = 0.5f;
 
     public Image damageImage;
     public bool damaged;
@@ -29,39 +31,60 @@ public class PlayerController : MonoBehaviour {
     public float currentHealth;
     public float basePlayerHealth = 1;
 
+    public float currentShield;
+    public float basePlayerShield = 1;
+
     public bool ImmuneToDamage;
 
     public Color screenFlash = new Color(1.0f, 0f, 0f, 1f);
 
     public PauseScript UIScript;
 
-  	int i;
+    int i;
 
-    public Image healthbar;
+    public Text playerHealthText;
+    public Text playerShieldText;
+
+    public Image shieldBar;
+    public Image healthBar;
+
+    public bool shieldDepleted;
+
+
 
     void Start()
-	{
+    {
         currentHealth = basePlayerHealth;
+        currentShield = basePlayerShield;
+        healthBar.fillAmount = currentHealth;
+        shieldBar.fillAmount = currentShield;
 
-        //healthbar = GetComponent<Image>();
-        healthbar.fillAmount = currentHealth;
-        health = 3;
-        heart1.gameObject.SetActive(true);
-        heart2.gameObject.SetActive(true);
-        heart3.gameObject.SetActive(true);
         playerInstance = this;
-		myRB = GetComponent<Rigidbody>();
-	}
+        myRB = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
 
-        if(health > 3)
+        playerHealthText.text = "Health: " + currentHealth * 100;
+        playerShieldText.text = "Shield: " + currentShield * 100;
+
+        if(currentShield < basePlayerShield)
+        {
+            StartCoroutine(ShieldRegen());
+        }
+
+        if(currentShield == 0 || currentShield <= 0)
+        {
+            shieldDepleted = true;
+        }
+
+        if (health > 3)
         {
             health = 3;
         }
 
-        if(shootCooldown > 0)
+        if (shootCooldown > 0)
         {
             shootCooldown -= Time.deltaTime;
         }
@@ -73,7 +96,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //Debug Testing
-        if(Input.GetKeyDown(KeyCode.Z) && !ImmuneToDamage)
+        if (Input.GetKeyDown(KeyCode.Z) && !ImmuneToDamage)
         {
             TakeDamage(0.25f);
             Debug.Log(health);
@@ -83,93 +106,73 @@ public class PlayerController : MonoBehaviour {
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, IeFrames * Time.deltaTime * 10);
         }
-
-        SetHealth();
     }
 
     // Update is called once per frame
     void FixedUpdate()
-	{
+    {
         float moveHorizontal = 0.75f;
         float moveVertical = Input.GetAxis("Vertical");
 
-        if(Input.GetAxisRaw("Horizontal") > 0)
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-			moveHorizontal = 1.0f;
+            moveHorizontal = 1.0f;
         }
-        if(Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetAxisRaw("Horizontal") < 0)
         {
-			moveHorizontal = 0.5f;
+            moveHorizontal = 0.5f;
         }
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         myRB.velocity = movement * speed;
 
-		if (transform.position.y >= 19) {
-			transform.position = new Vector3 (transform.position.x, 19, transform.position.z);
-		}
-		if (transform.position.y <= -9)
-		{
-			transform.position = new Vector3 (transform.position.x, -9, transform.position.z);
-		}
+        if (transform.position.y >= 19) {
+            transform.position = new Vector3(transform.position.x, 19, transform.position.z);
+        }
+        if (transform.position.y <= -9)
+        {
+            transform.position = new Vector3(transform.position.x, -9, transform.position.z);
+        }
 
     }
 
-	void OnCollisionEnter (Collision collision)
-	{
-		if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemyBullet" && !ImmuneToDamage)
-		{
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemyBullet" && !ImmuneToDamage)
+        {
 
             TakeDamage(0.2f);
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
 
-			GetComponent<MeshCollider> ().enabled = false;
-			Invoke ("hit", 0.1f);
-		}
-	}
+            GetComponent<MeshCollider>().enabled = false;
+            Invoke("hit", 0.1f);
+        }
+    }
 
     public int GetDirection()
     {
         return direction;
     }
-  
-    public void SetHealth()
-    {
-        switch(health)
-        {
-            case 3:
-                heart1.SetActive(true);
-                heart2.SetActive(true);
-                heart3.SetActive(true);
-                break;
-            case 2:
-                heart1.SetActive(true);
-                heart2.SetActive(true);
-                heart3.SetActive(false);
-                break;
-            case 1:
-                heart1.SetActive(true);
-                heart2.SetActive(false);
-                heart3.SetActive(false);
-                break;
-            case 0:
-                heart1.SetActive(false);
-                heart2.SetActive(false);
-                heart3.SetActive(false);
-                
-                UIScript.GameOver();
-                break;
-        }
-    }
 
     public void TakeDamage(float amount)
     {
         StartCoroutine(InvisibilityFrames());
-        currentHealth -= amount;
-        healthbar.fillAmount =  currentHealth;
-        DamageFlash();
-        if(currentHealth <= 0)
+        if (currentShield >= 0 && !shieldDepleted)
+        {
+            currentShield -= amount;
+            shieldBar.fillAmount = currentShield;
+        }
+
+        if (currentShield == 0)
+        {
+            currentHealth -= amount;
+            healthBar.fillAmount = currentHealth;
+            DamageFlash();
+        }
+        if (currentHealth <= 0)
         {
             UIScript.GameOver();
         }
@@ -177,11 +180,11 @@ public class PlayerController : MonoBehaviour {
 
     public void DamageFlash()
     {
-        if(damaged)
+        if (damaged)
         {
             damageImage.color = screenFlash;
         }
-        if(damaged && health == 0)
+        if (damaged && health == 0)
         {
             damageImage.color = Color.clear;
         }
@@ -197,23 +200,31 @@ public class PlayerController : MonoBehaviour {
         ImmuneToDamage = false;
 
     }
-  
-	public void hit()
-	{
-		GetComponent<MeshRenderer> ().enabled = false;
-		Invoke ("reset", 0.2f);
-	}
 
-	public void reset()
-	{
-		if (i < 2) {
-			GetComponent<MeshRenderer> ().enabled = true;
-			i += 1;
-			Invoke ("hit", 0.2f);
-		} else {
-			GetComponent<MeshRenderer> ().enabled = true;
-			i = 0;
-			GetComponent<MeshCollider> ().enabled = true;
-		}
-	}
+    public void hit()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        Invoke("reset", 0.2f);
+    }
+
+    public void reset()
+    {
+        if (i < 2) {
+            GetComponent<MeshRenderer>().enabled = true;
+            i += 1;
+            Invoke("hit", 0.2f);
+        } else {
+            GetComponent<MeshRenderer>().enabled = true;
+            i = 0;
+            GetComponent<MeshCollider>().enabled = true;
+        }
+    }
+
+    public IEnumerator ShieldRegen()
+    {
+        
+
+        yield return new WaitForSeconds(shieldRegen);
+        
+    }
 }
