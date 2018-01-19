@@ -41,7 +41,7 @@ public class bossTurret : MonoBehaviour {
 				health--;
 				Invoke ("hit", 0.2f);
 				BossController.baseBossHealth -= 0.1f;
-				GetComponent<MeshRenderer> ().enabled = false;
+				GetComponent<MeshCollider> ().enabled = false;
 			}
 		}
 	}
@@ -61,7 +61,7 @@ public class bossTurret : MonoBehaviour {
 		} else {
 			GetComponent<MeshRenderer> ().enabled = true;
 			i = 0;
-			GetComponent<MeshRenderer> ().enabled = true;
+			GetComponent<MeshCollider> ().enabled = true;
 		}
 	}
 }

@@ -175,6 +175,8 @@ MonoBehaviour:
   speed: 0
   ExplosionGo: {fileID: 1041610948643242, guid: 9c96f630afb1c0746bd864ca01fe15e1,
     type: 2}
+  ExplosionGo2: {fileID: 1936065244867024, guid: fa69e0fbde590b043ae67966ecb8d3ff,
+    type: 2}
 --- !u!212 &212204895543506012
 SpriteRenderer:
   m_ObjectHideFlags: 1

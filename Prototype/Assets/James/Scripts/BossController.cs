@@ -77,7 +77,7 @@ public class BossController : MonoBehaviour {
 			health--;
 			Invoke ("hit", 0.2f);
 			TakeDamage (0.1f);
-			GetComponent<MeshRenderer> ().enabled = false;
+			GetComponent<MeshCollider> ().enabled = false;
 		}
 	}
 
@@ -102,7 +102,7 @@ public class BossController : MonoBehaviour {
 		} else {
 			GetComponent<MeshRenderer> ().enabled = true;
 			i = 0;
-			GetComponent<MeshRenderer> ().enabled = false;
+			GetComponent<MeshCollider> ().enabled = true;
 		}
 	}
 }
